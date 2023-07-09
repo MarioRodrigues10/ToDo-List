@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 px-8 py-12">
+    <div class="flex justify-center">
+      <h1 class="text-3xl text-gray-100 text-center font-bold mb-6">
+        To-Do List
+        <span class=" text-sm"> <i> for Analytics</i></span>
+      </h1>
+    </div>
+    <div class="max-w-xl mx-auto text-gray-100 text-base">
+        <div>
+            <span class="text-xl">Current tasks </span>
+        <div>
+        <input type="text" id="addTask" class="mt-2 mb-2 bg-gray-800 border w-full text-base px-2 py-1 placeholder-gray-400" placeholder="Add task" />
+        </div>       
+        <section class="main" style="display: block;">
+        <ul>
+            <li>
+                <div class="view">
+                <input class="toggle" type="checkbox" />
+                <label >1st</label>
+              </div></li>
+            <li>
+                <div class="view">
+                <input class="toggle" type="checkbox" />
+                <label >2nd</label>
+                </div></li>
+            <li><div class="view">
+                <input class="toggle" type="checkbox" />
+                <label >3rd</label>
+                </div></li>
+            <input id="toggle-all" class="toggle-all mt-2" type="checkbox" />
+            <label for="toggle-all" >Mark all as complete</label>
+        </ul>
+        </section>
+        </div>
+        <div class="mt-5">
+            <span class= "text-xl">Completed tasks </span>
+            <div>
+            <ul>
+                <li>
+                    <div class="view">
+                    <input checked id="checked-checkbox" class="toggle" type="checkbox" />
+                    <label >1st</label>
+                    <button class="destroy"></button>
+                  </div></li>
+                <li>
+                    <div class="view">
+                    <input checked id="checked-checkbox" class="toggle" type="checkbox" />
+                    <label >2nd</label>
+                    <button class="destroy"></button></li>
+                <li><div class="view">
+                    <input checked id="checked-checkbox" class="toggle" type="checkbox" />
+                    <label >3rd</label>
+                    <button class="destroy"></button></li></li>
+        </div>
+        <button type="button" class="bg-cyan-200 text-gray-900 text-base font-semibold py-1 px-2 rounded-md hover:text-cyan-200 hover:bg-transparent" style="float: right;">Logout</button>
+      </div>
+    </div>
+</body>
