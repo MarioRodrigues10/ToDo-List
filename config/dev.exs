@@ -25,7 +25,8 @@ config :todo_list, TodoListWeb.Endpoint,
   secret_key_base: "LUgyc0RlMrtYZgoZHjZNkTAB1vI3E5qFu2yOmvrz7ETEx3MO1LfoHtWBh6qHz+GL",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+     tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
