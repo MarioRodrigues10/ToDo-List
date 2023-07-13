@@ -17,7 +17,7 @@ defmodule TodoListWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", TodoListWeb do
+scope "/", TodoListWeb do
     pipe_through :browser
 
     get "/", PageController, :index
@@ -74,6 +74,11 @@ defmodule TodoListWeb.Router do
 
   scope "/", TodoListWeb do
     pipe_through [:browser, :require_authenticated_user]
+    live "/tasks", TaskLive.Index, :index
+    live "/tasks/new", TaskLive.Index, :new
+    live "/tasks/:id/edit", TaskLive.Index, :edit
+    live "/tasks/:id/show", TaskLive.Show, :show
+    live "/tasks/:id/show/edit", TaskLive.Show, :edit
 
     get "/users/settings", UserSettingsController, :edit
     put "/users/settings", UserSettingsController, :update

@@ -1,6 +1,8 @@
-<h1>Settings</h1>
+<h1 class="text-center py-6"> Settings</h1>
 
-<h3>Change email</h3>
+<div class="grid grid-cols-2 ">
+  <div>
+<h3 class="px-2 justify-center ">Change email</h3>
 
 <.form let={f} for={@email_changeset} action={Routes.user_settings_path(@conn, :update)} id="update_email">
   <%= if @email_changeset.action do %>
@@ -23,8 +25,9 @@
     <%= submit "Change email" %>
   </div>
 </.form>
-
-<h3>Change password</h3>
+  </div>
+  <div>
+<h3 class="px-2 justify-center">Change password</h3>
 
 <.form let={f} for={@password_changeset} action={Routes.user_settings_path(@conn, :update)} id="update_password">
   <%= if @password_changeset.action do %>
@@ -51,3 +54,5 @@
     <%= submit "Change password" %>
   </div>
 </.form>
+</div></div>
+
