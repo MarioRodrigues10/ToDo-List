@@ -1,5 +1,5 @@
 <div class="flex flex-row space-x-4 mt-4 border border-gray-200">
-  <h2><%= @title %></h2>
+  <h2 class=" mx-5 mt-4 text-lg font-bold"><%= @title %></h2>
 
   <.form
     let={f}
@@ -9,20 +9,27 @@
     phx-change="validate"
     phx-submit="save">
   
-    <%= label f, :name %>
-    <%= text_input f, :name %>
-    <%= error_tag f, :name %>
-  
-    <%= label f, :description %>
-    <%= text_input f, :description %>
-    <%= error_tag f, :description %>
-  
-    <%= label f, :finished %>
-    <%= checkbox f, :finished %>
-    <%= error_tag f, :finished %>
-  
-    <div>
-      <%= submit "Save", phx_disable_with: "Saving..." %>
+    <div class="mx-12 my-4">
+      <%= label f, :name, class: "block font-semibold mb-1" %>
+      <%= text_input f, :name, class: "w-full border border-gray-300 rounded px-3 py-2" %>
+      <%= error_tag f, :name %>
     </div>
+
+    <div class="mx-12 mb-4">
+      <%= label f, :description, class: "block font-semibold mb-1" %>
+      <%= text_input f, :description, class: "w-full border border-gray-300 rounded px-3 py-2" %>
+      <%= error_tag f, :description %>
+    </div>
+
+    <div class="mx-12 mb-4">
+      <%= label f, :finished, class: "block font-semibold" %>
+      <%= checkbox f, :finished, class: "form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded" %>
+      <%= error_tag f, :finished %>
+    </div>
+
+    <div class="mx-12 mb-5">
+      <%= submit "Save", class: "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded", phx_disable_with: "Saving..." %>
+    </div>
+  
   </.form>
 </div>
