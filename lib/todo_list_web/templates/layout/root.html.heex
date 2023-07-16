@@ -9,21 +9,18 @@
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
-  <body>
+  <body class=" bg-gray-200 flex flex-col items-center justify-center">
     <header>
       <section class="container">
+        <h1 class="text-3xl text-gray-900 text-center font-bold mt-10 mb-6">
+          To-Do List
+        <span class=" text-sm"> <i> for Analytics</i></span>
+      </h1>
         <nav>
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
+          <%=  link "Tasks", to: Routes.task_index_path(@conn, :index), class: "bg-transparent hover:bg-blue-500 text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded flex justify-center" %>
           <%= render "_user_menu.html", assigns %>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        </a>
+          
       </section>
     </header>
     <%= @inner_content %>
